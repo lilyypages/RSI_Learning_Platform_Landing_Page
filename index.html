@@ -1,191 +1,428 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiPanda | L-Platform - Belajar Adaptif Seru</title>
-    
-    <!-- Google Font: Nunito (Bulat & Ramah Anak) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIPANDA – Sistem Informasi Pembelajaran Adaptif</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav class="navbar">
-        <div class="logo">
-            <span class="panda-icon">🐼</span> 
-            <div class="logo-text">
-                <strong>SiPanda</strong>
-                <small>L-Platform</small>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#cara-kerja">Cara Kerja</a></li>
-            <li><a href="#fitur">Fitur Utama</a></li>
-            <li><a href="#hadiah">Hadiah Kantin</a></li>
-        </ul>
-        <div class="nav-auth">
-            <button class="btn-login">Masuk ke Panel</button>
-        </div>
-    </nav>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-icon">🐼</span>
+    SIPANDA
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#fitur">Fitur</a></li>
+    <li><a href="#peran">Pengguna</a></li>
+    <li><a href="#cara-kerja">Cara Kerja</a></li>
+    <li><a href="#masuk" class="btn-login">Masuk</a></li>
+  </ul>
+</nav>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="badge-new">✨ Belajar Sambil Main</div>
-                <h1>Ubah Screen Time Menjadi <span>Waktu Berprestasi!</span></h1>
-                <p>
-                    SiPanda adalah teman belajar adaptif yang mengerti kecepatan belajar setiap anak. Dirancang khusus untuk siswa SD agar tetap produktif di waktu senggang tanpa merasa terbebani.
-                </p>
-                <div class="hero-cta">
-                    <button class="btn-primary">Mulai Belajar Sekarang</button>
-                    <button class="btn-secondary">Lihat Demo Guru</button>
-                </div>
-                <div class="hero-trust">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <p>Membantu 100+ siswa belajar lebih mandiri di hari libur.</p>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="panda-visual">
-                    <span class="floating-item item-1">📚</span>
-                    <span class="floating-item item-2">⭐</span>
-                    <span class="floating-item item-3">🍎</span>
-                    <img src="https://via.placeholder.com/400x400?text=Maskot+Panda" alt="SiPanda Mascot">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <span class="hero-badge">🏫 Untuk Sekolah Dasar</span>
+      <h1 class="hero-title">
+        Belajar Itu<br>
+        <span>Seru &amp; Mudah</span><br>
+        Bersama SIPANDA!
+      </h1>
+      <p class="hero-subtitle">
+        Platform belajar online khusus untuk siswa SD. Belajar materi pelajaran, kumpulkan poin, dan tukar hadiahnya! Orang tua bisa pantau kemajuan belajar anak kapan saja. 🎉
+      </p>
+      <div class="hero-cta">
+        <a href="#masuk" class="btn-primary">🚀 Mulai Belajar Sekarang</a>
+        <a href="#tentang" class="btn-secondary">Pelajari Lebih Lanjut</a>
+      </div>
+    </div>
+    <div class="hero-mascot reveal">
+      <div class="speech-bubble">
+        Halo! Aku <strong>Panda</strong> 🐼<br>
+        Yuk belajar bareng biar makin pintar!<br>
+        Nanti dapat poin dan hadiah lo! 🎁
+      </div>
+      
+      <!-- MASCOT BARU (Menggunakan Image) -->
+      <img src="assets/images/panda_study.png" alt="Mascot Sipanda" class="panda-img">
+      
+      <span class="stars-deco">⭐</span>
+    </div>
+    </div>
+</section>
 
-    <!-- ================= ADAPTIVE INFO ================= -->
-    <section id="cara-kerja" class="adaptive-info">
-        <div class="section-header">
-            <h2>Gak Ada Lagi Kata "Terlalu Susah"</h2>
-            <p>Algoritma cerdas kami menyesuaikan tingkat kesulitan soal secara otomatis.</p>
-        </div>
-        
-        
+<!-- ABOUT -->
+<section class="about-section" id="tentang">
+  <span class="section-emoji">📱</span>
+  <h2 class="section-title">Apa itu SIPANDA?</h2>
+  <p class="section-sub">
+    <strong>Sistem Informasi Pembelajaran Adaptif berbasis aNalitik DAta siswa</strong> — platform belajar online yang menghubungkan siswa, orang tua, guru, dan kepala sekolah dalam satu ekosistem digital yang menyenangkan!
+  </p>
+  <div class="about-grid reveal">
+    <div class="about-card green">
+      <div class="about-card-icon">🎯</div>
+      <h3>Belajar Adaptif</h3>
+      <p>Sistem otomatis menyesuaikan tingkat kesulitan soal berdasarkan kemampuan dan kecepatan belajar setiap siswa secara real-time.</p>
+    </div>
+    <div class="about-card yellow">
+      <div class="about-card-icon">🏆</div>
+      <h3>Poin & Hadiah</h3>
+      <p>Setiap jawaban benar dan aktivitas belajar menghasilkan poin yang bisa ditukarkan dengan hadiah menarik di kantin sekolah!</p>
+    </div>
+    <div class="about-card blue">
+      <div class="about-card-icon">👨‍👩‍👧</div>
+      <h3>Pantauan Orang Tua</h3>
+      <p>Orang tua bisa memantau perkembangan belajar anak kapan saja — lihat grafik kemajuan, nilai, dan aktivitas belajar si kecil.</p>
+    </div>
+    <div class="about-card orange">
+      <div class="about-card-icon">📊</div>
+      <h3>Laporan Otomatis</h3>
+      <p>Laporan mingguan otomatis dikirim ke orang tua dan guru lengkap dengan analisis kemajuan dan rekomendasi pembelajaran.</p>
+    </div>
+  </div>
 
-        <div class="adaptive-grid">
-            <div class="adaptive-card">
-                <div class="step">01</div>
-                <h3>Mulai Kuis</h3>
-                <p>Siswa mengerjakan soal dasar untuk pemanasan.</p>
-            </div>
-            <div class="adaptive-card highlight">
-                <div class="step">02</div>
-                <h3>Branching</h3>
-                <p>Jawaban benar? Soal naik tingkat. Jawaban salah? Sistem beri bantuan.</p>
-            </div>
-            <div class="adaptive-card">
-                <div class="step">03</div>
-                <h3>Poin & Hadiah</h3>
-                <p>Dapatkan Panda Points dari setiap kemajuan yang dicapai.</p>
-            </div>
-        </div>
-    </section>
+  <div class="notice-box reveal" style="margin-top: 2.5rem;">
+    <span class="notice-icon">⚠️</span>
+    <div class="notice-text">
+      <strong>Penting untuk Diketahui:</strong> SIPANDA adalah alat bantu belajar digital dan <strong>tidak memengaruhi nilai rapor</strong> secara langsung. Tujuan utama SIPANDA adalah membantu siswa belajar dengan cara yang menyenangkan di waktu senggang — saat libur, hari Minggu, atau sore hari setelah selesai bermain. SIPANDA bukan pengganti guru di kelas!
+    </div>
+  </div>
+</section>
 
-    <!-- ================= ROLES SECTION ================= -->
-    <section class="roles-section">
-        <div class="container">
-            <h2>Satu Ekosistem, Empat Peran</h2>
-            <div class="roles-grid">
-                <div class="role-box">
-                    <div class="role-icon">👦</div>
-                    <h3>Siswa</h3>
-                    <ul>
-                        <li>Quest harian seru</li>
-                        <li>Sistem nyawa (lives)</li>
-                        <li>Tukar poin hadiah</li>
-                    </ul>
-                </div>
-                <div class="role-box">
-                    <div class="role-icon">👩‍🏫</div>
-                    <h3>Guru</h3>
-                    <ul>
-                        <li>Monitor real-time</li>
-                        <li>Analisis pemahaman</li>
-                        <li>Bank soal adaptif</li>
-                    </ul>
-                </div>
-                <div class="role-box">
-                    <div class="role-icon">👨‍👩‍👧</div>
-                    <h3>Orang Tua</h3>
-                    <ul>
-                        <li>Laporan mingguan</li>
-                        <li>Notifikasi kemajuan</li>
-                        <li>Akses ParentHub</li>
-                    </ul>
-                </div>
-                <div class="role-box">
-                    <div class="role-icon">🏫</div>
-                    <h3>Kepsek</h3>
-                    <ul>
-                        <li>Overview sekolah</li>
-                        <li>Audit keamanan data</li>
-                        <li>Evaluasi efektivitas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FEATURES -->
+<section class="features-section" id="fitur">
+  <span class="section-emoji">✨</span>
+  <h2 class="section-title">Fitur Unggulan SIPANDA</h2>
+  <p class="section-sub">Belajar jadi lebih seru dengan berbagai fitur canggih yang dirancang khusus untuk siswa SD!</p>
+  <div class="features-grid reveal">
+    <div class="feature-card f1">
+      <span class="feature-icon">🧠</span>
+      <h4>Soal Adaptif Pintar</h4>
+      <p>Soal otomatis naik atau turun level sesuai kemampuanmu. Tidak terlalu mudah, tidak terlalu susah!</p>
+    </div>
+    <div class="feature-card f2">
+      <span class="feature-icon">🔥</span>
+      <h4>Streak Belajar</h4>
+      <p>Pertahankan streak belajar harianmu! Semakin panjang streak, semakin banyak bonus poin!</p>
+    </div>
+    <div class="feature-card f3">
+      <span class="feature-icon">📹</span>
+      <h4>Materi Video</h4>
+      <p>Tonton video pembelajaran seru yang mudah dipahami. Belajar sambil nonton bukan nonton YouTube!</p>
+    </div>
+    <div class="feature-card f4">
+      <span class="feature-icon">💬</span>
+      <h4>Forum & Chat</h4>
+      <p>Tanya guru atau diskusi dengan teman soal pelajaran melalui forum belajar yang aman.</p>
+    </div>
+    <div class="feature-card f5">
+      <span class="feature-icon">📈</span>
+      <h4>Progress Tracker</h4>
+      <p>Lihat sejauh mana kamu sudah menguasai setiap bab pelajaran dengan progress bar yang seru!</p>
+    </div>
+    <div class="feature-card f6">
+      <span class="feature-icon">🔔</span>
+      <h4>Notifikasi Pintar</h4>
+      <p>Pengingat belajar dan notifikasi penting yang dikirim ke siswa, orang tua, dan guru.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= REWARD SYSTEM ================= -->
-    <section id="hadiah" class="reward-system">
-        <div class="reward-container">
-            <div class="reward-image">
-                <div class="kantin-visual">🏪</div>
-            </div>
-            <div class="reward-content">
-                <div class="badge-reward">Reward Kantin</div>
-                <h2>Bisa Tukar Jajan di Kantin Sekolah!</h2>
-                <p>
-                    Kami bekerja sama dengan kantin sekolah agar poin belajar bisa ditukarkan dengan makanan sehat, alat tulis, atau stiker lucu. Belajar jadi makin semangat seperti dapat hadiah di <em>arcade</em>!
-                </p>
-                <div class="reward-steps">
-                    <div class="r-step">✅ Kumpulkan 500 Poin</div>
-                    <div class="r-step">✅ Tukar QR Code</div>
-                    <div class="r-step">✅ Ambil Hadiahmu!</div>
-                </div>
-            </div>
+<!-- REWARDS -->
+<section class="rewards-section">
+  <div class="rewards-inner">
+    <div class="rewards-text reveal">
+      <h2>🎁 Kumpulkan Poin, Tukar Hadiah!</h2>
+      <p>
+        Di SIPANDA, setiap aktivitas belajar menghasilkan poin! Selesaikan kuis, pertahankan streak harian, raih nilai tinggi — semuanya berhadiah poin yang bisa ditukar langsung di kantin sekolah.
+      </p>
+      <p>
+        Seperti bermain di Timezone, tapi hadiahnya bisa dimakan atau diminum! 🍭 Anak semangat belajar, orang tua senang screen time anak lebih berkualitas.
+      </p>
+      <div class="point-badges">
+        <span class="point-badge">⭐ Jawaban Benar = +10 poin</span>
+        <span class="point-badge">🔥 Streak 7 Hari = +100 poin</span>
+        <span class="point-badge">🏆 Skor Sempurna = +50 poin</span>
+        <span class="point-badge">📖 Selesai Bab = +75 poin</span>
+      </div>
+    </div>
+    <div class="rewards-visual reveal">
+      <div class="reward-item">
+        <span class="reward-item-icon">🍪</span>
+        <div class="reward-item-info">
+          <strong>Snack Kantin</strong>
+          <span>Cemilan favorit</span>
         </div>
-    </section>
+        <span class="reward-pts">200 pts</span>
+      </div>
+      <div class="reward-item">
+        <span class="reward-item-icon">🥤</span>
+        <div class="reward-item-info">
+          <strong>Minuman Segar</strong>
+          <span>Jus atau susu</span>
+        </div>
+        <span class="reward-pts">350 pts</span>
+      </div>
+      <div class="reward-item">
+        <span class="reward-item-icon">🍱</span>
+        <div class="reward-item-info">
+          <strong>Makan Siang</strong>
+          <span>Menu spesial kantin</span>
+        </div>
+        <span class="reward-pts">500 pts</span>
+      </div>
+      <div class="reward-item">
+        <span class="reward-item-icon">📓</span>
+        <div class="reward-item-info">
+          <strong>Alat Tulis</strong>
+          <span>Buku & pensil keren</span>
+        </div>
+        <span class="reward-pts">800 pts</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= DISCLAIMER ================= -->
-    <section class="disclaimer">
-        <div class="disclaimer-box">
-            <h3>🛡️ Catatan untuk Orang Tua</h3>
-            <p>
-                SiPanda dirancang sebagai <strong>alat bantu tambahan</strong> untuk mengisi waktu luang (sore hari atau hari libur). Sistem ini tidak menggantikan guru dan <strong>tidak berpengaruh langsung pada nilai rapor resmi</strong> atau Dapodik. Fokus kami adalah membangun rasa percaya diri anak dalam belajar.
-            </p>
-        </div>
-    </section>
+<!-- ROLES -->
+<section class="roles-section" id="peran">
+  <span class="section-emoji">👥</span>
+  <h2 class="section-title">Siapa Saja Penggunanya?</h2>
+  <p class="section-sub">SIPANDA melayani seluruh ekosistem sekolah — login sesuai akun masing-masing dan langsung diarahkan ke dashboard yang tepat!</p>
+  <div class="roles-grid reveal">
+    <div class="role-card siswa">
+      <div class="role-avatar">👧</div>
+      <h3>Siswa</h3>
+      <p>Portal belajar seru dengan gamifikasi, soal adaptif, dan sistem poin hadiah!</p>
+      <ul class="role-features">
+        <li>Materi & video pelajaran</li>
+        <li>Kuis adaptif interaktif</li>
+        <li>Streak & sistem poin</li>
+        <li>Progress per bab</li>
+        <li>Riwayat nilai</li>
+      </ul>
+    </div>
+    <div class="role-card ortu">
+      <div class="role-avatar">👩</div>
+      <h3>Orang Tua</h3>
+      <p>Pantau kemajuan belajar anak kapan saja dan di mana saja dengan mudah!</p>
+      <ul class="role-features">
+        <li>Grafik kemajuan anak</li>
+        <li>Alert perlu perhatian</li>
+        <li>Laporan mingguan</li>
+        <li>Pesan langsung ke guru</li>
+        <li>Histori aktivitas belajar</li>
+      </ul>
+    </div>
+    <div class="role-card guru">
+      <div class="role-avatar">👨‍🏫</div>
+      <h3>Guru / Wali Kelas</h3>
+      <p>Kelola materi, pantau siswa, dan buat soal adaptif dengan mudah!</p>
+      <ul class="role-features">
+        <li>Monitoring siswa real-time</li>
+        <li>Bank soal adaptif</li>
+        <li>Laporan mingguan otomatis</li>
+        <li>Forum komunikasi siswa</li>
+        <li>Analitik per kelas</li>
+      </ul>
+    </div>
+    <div class="role-card kepala">
+      <div class="role-avatar">👨‍💼</div>
+      <h3>Kepala Sekolah</h3>
+      <p>Pantau performa seluruh sekolah dan kelola manajemen guru &amp; siswa!</p>
+      <ul class="role-features">
+        <li>Overview sekolah</li>
+        <li>Manajemen guru</li>
+        <li>Data seluruh siswa</li>
+        <li>Audit & keamanan sistem</li>
+        <li>Ketuntasan per kelas</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <h3>🐼 SiPanda</h3>
-                <p>Menciptakan generasi SD yang cinta belajar melalui teknologi adaptif.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Link Cepat</h4>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Kebijakan Privasi</a></li>
-                    <li><a href="#">Hubungi Kami</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 L-Platform Team. Build with ❤️ for Education.</p>
-        </div>
-    </footer>
+<!-- SCOPE -->
+<section class="scope-section">
+  <span class="section-emoji">📋</span>
+  <h2 class="section-title">Apa yang Bisa & Tidak Bisa SIPANDA Lakukan?</h2>
+  <p class="section-sub">Transparansi adalah penting. Berikut ruang lingkup sistem SIPANDA dengan jelas!</p>
+  <div class="scope-cols reveal">
+    <div class="scope-col scope-in">
+      <h3>✅ Dalam Cakupan</h3>
+      <ul class="scope-list">
+        <li>Manajemen akun dengan hak akses berbeda untuk setiap peran</li>
+        <li>Konten pembelajaran: teks, video embed, soal adaptif</li>
+        <li>Mesin asesmen adaptif berbasis performa siswa</li>
+        <li>Dashboard monitoring siswa real-time</li>
+        <li>Laporan mingguan otomatis dengan rekomendasi</li>
+        <li>Forum kolaborasi dan notifikasi antar pengguna</li>
+        <li>Panel administrasi sekolah untuk kepala sekolah</li>
+        <li>Antarmuka responsif (bisa diakses dari HP maupun laptop)</li>
+        <li>Sistem poin gamifikasi dan penukaran hadiah</li>
+      </ul>
+    </div>
+    <div class="scope-col scope-out">
+      <h3>❌ Di Luar Cakupan</h3>
+      <ul class="scope-list">
+        <li>Tidak menggantikan kehadiran fisik guru di kelas</li>
+        <li>Tidak terintegrasi dengan Dapodik atau Rapor Digital</li>
+        <li>Tidak ada fitur video conference / live streaming</li>
+        <li>Tidak mencakup absensi atau administrasi non-akademik</li>
+        <li>Tidak berpengaruh langsung pada nilai rapor resmi</li>
+        <li>Tidak tersedia sebagai aplikasi mobile native (Android/iOS)</li>
+        <li>Tidak mencakup modul keuangan sekolah</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+<!-- HOW IT WORKS -->
+<section class="how-section" id="cara-kerja">
+  <span class="section-emoji">🔄</span>
+  <h2 class="section-title">Bagaimana Cara Kerjanya?</h2>
+  <p class="section-sub">Mulai belajar dengan SIPANDA sangat mudah! Ikuti langkah-langkah berikut ini:</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <span class="step-icon">📧</span>
+      <div class="step-text">
+        <h4>Dapatkan Akun dari Sekolah</h4>
+        <p>Sekolah memberikan email dan password akun SIPANDA. Siswa, orang tua, guru, dan kepala sekolah masing-masing mendapat akun sesuai perannya.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <span class="step-icon">🔑</span>
+      <div class="step-text">
+        <h4>Login ke SIPANDA</h4>
+        <p>Masuk menggunakan email yang diberikan. Sistem otomatis mengarahkanmu ke dashboard sesuai peran — siswa ke portal belajar, orang tua ke panel monitoring, dll.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <span class="step-icon">📚</span>
+      <div class="step-text">
+        <h4>Pelajari Materi & Kerjakan Soal</h4>
+        <p>Siswa membaca materi, menonton video, lalu mengerjakan kuis. Sistem secara otomatis menyesuaikan tingkat kesulitan soal berdasarkan jawaban yang diberikan.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <span class="step-icon">⭐</span>
+      <div class="step-text">
+        <h4>Kumpulkan Poin dari Aktivitas Belajar</h4>
+        <p>Setiap jawaban benar, streak harian, dan penyelesaian bab menghasilkan poin. Semakin rajin belajar, semakin banyak poin yang terkumpul!</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">5</div>
+      <span class="step-icon">🎁</span>
+      <div class="step-text">
+        <h4>Tukar Poin dengan Hadiah!</h4>
+        <p>Bawa poin ke kantin sekolah dan tukar dengan jajan atau hadiah favoritmu. Orang tua bisa memantau semua progres ini di dashboard mereka!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="masuk">
+  <h2>Siap Mulai Belajar Bersama SIPANDA? 🚀</h2>
+  <p>Bergabung dengan ribuan siswa yang sudah belajar lebih seru, lebih pintar, dan lebih bersemangat setiap harinya!</p>
+  <div class="cta-btns">
+    <a href="#" class="btn-white">🐼 Masuk Sekarang</a>
+    <a href="#tentang" class="btn-outline-white">Pelajari Lebih Lanjut</a>
+  </div>
+  <p style="margin-top: 1.5rem; font-size: 0.82rem; opacity: 0.6;">Akun SIPANDA diberikan oleh pihak sekolah. Hubungi sekolahmu untuk info lebih lanjut.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">🐼 SIPANDA</div>
+      <p>Sistem Informasi Pembelajaran Adaptif berbasis aNalitik DAta siswa. Platform belajar seru untuk ekosistem Sekolah Dasar.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang SIPANDA</a></li>
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#peran">Pengguna</a></li>
+        <li><a href="#cara-kerja">Cara Kerja</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Pengguna</h4>
+      <ul>
+        <li><a href="#">Portal Siswa</a></li>
+        <li><a href="#">Panel Orang Tua</a></li>
+        <li><a href="#">Guru & Wali Kelas</a></li>
+        <li><a href="#">Kepala Sekolah</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Bantuan</h4>
+      <ul>
+        <li><a href="#">Panduan Penggunaan</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SIPANDA – Sistem Informasi Pembelajaran Adaptif. Dibuat dengan ❤️ untuk kemajuan pendidikan SD Indonesia.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Animated speech bubble cycling
+  const msgs = [
+    'Halo! Aku <strong>Panda</strong> 🐼<br>Yuk belajar bareng biar makin pintar!<br>Nanti dapat poin dan hadiah lo! 🎁',
+    'Belajar itu <strong>seru</strong> lho! 🎉<br>Kerjakan soal, kumpulkan poin,<br>dan tukar dengan jajan! 🍪',
+    'Orang tua bisa <strong>pantau</strong> 👀<br>perkembangan belajarmu<br>kapan saja! 📱',
+    'Soal akan <strong>menyesuaikan</strong> 🧠<br>kemampuanmu otomatis!<br>Tidak susah, tidak gampang! ✨'
+  ];
+  let mi = 0;
+  const bubble = document.querySelector('.speech-bubble');
+  setInterval(() => {
+    bubble.style.opacity = '0';
+    bubble.style.transition = 'opacity 0.4s';
+    setTimeout(() => {
+      mi = (mi + 1) % msgs.length;
+      bubble.innerHTML = msgs[mi];
+      bubble.style.opacity = '1';
+    }, 400);
+  }, 4000);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
 </body>
 </html>
