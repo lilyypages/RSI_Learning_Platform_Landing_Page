@@ -13,7 +13,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <span class="logo-icon">🐼</span>
+    <span class="logo-icon">S</span>
     SIPANDA
   </a>
   <ul class="nav-links">
@@ -21,7 +21,7 @@
     <li><a href="#fitur">Fitur</a></li>
     <li><a href="#peran">Pengguna</a></li>
     <li><a href="#cara-kerja">Cara Kerja</a></li>
-    <li><a href="#masuk" class="btn-login">Masuk</a></li>
+    <li><button class="btn-login" onclick="openModal('login')">Masuk</button></li>
   </ul>
 </nav>
 
@@ -29,106 +29,103 @@
 <section class="hero" id="beranda">
   <div class="hero-inner">
     <div class="hero-text reveal">
-      <span class="hero-badge">🏫 Untuk Sekolah Dasar</span>
+      <span class="hero-badge">Untuk Sekolah Dasar</span>
       <h1 class="hero-title">
         Belajar Itu<br>
         <span>Seru &amp; Mudah</span><br>
         Bersama SIPANDA!
       </h1>
       <p class="hero-subtitle">
-        Platform belajar online khusus untuk siswa SD. Belajar materi pelajaran, kumpulkan poin, dan tukar hadiahnya! Orang tua bisa pantau kemajuan belajar anak kapan saja. 🎉
+        Platform belajar online khusus untuk siswa SD. Belajar materi pelajaran, kumpulkan poin, dan tukar hadiahnya. Orang tua bisa pantau kemajuan belajar anak kapan saja.
       </p>
       <div class="hero-cta">
-        <a href="#masuk" class="btn-primary">🚀 Mulai Belajar Sekarang</a>
+        <button class="btn-primary" onclick="openModal('register')">Mulai Belajar Sekarang</button>
         <a href="#tentang" class="btn-secondary">Pelajari Lebih Lanjut</a>
       </div>
     </div>
     <div class="hero-mascot reveal">
       <div class="speech-bubble">
-        Halo! Aku <strong>Panda</strong> 🐼<br>
+        Halo! Aku <strong>Panda</strong><br>
         Yuk belajar bareng biar makin pintar!<br>
-        Nanti dapat poin dan hadiah lo! 🎁
+        Nanti dapat poin dan hadiah lo!
       </div>
-      
-      <!-- MASCOT BARU (Menggunakan Image) -->
+
       <img src="assets/images/panda_study.png" alt="Mascot Sipanda" class="panda-img">
-      
-      <span class="stars-deco">⭐</span>
+
+      <span class="stars-deco">&#9733;</span>
     </div>
     </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about-section" id="tentang">
-  <span class="section-emoji">📱</span>
   <h2 class="section-title">Apa itu SIPANDA?</h2>
   <p class="section-sub">
-    <strong>Sistem Informasi Pembelajaran Adaptif berbasis aNalitik DAta siswa</strong> — platform belajar online yang menghubungkan siswa, orang tua, guru, dan kepala sekolah dalam satu ekosistem digital yang menyenangkan!
+    <strong>Sistem Informasi Pembelajaran Adaptif berbasis aNalitik DAta siswa</strong> &mdash; platform belajar online yang menghubungkan siswa, orang tua, guru, dan kepala sekolah dalam satu ekosistem digital yang menyenangkan!
   </p>
   <div class="about-grid reveal">
     <div class="about-card green">
-      <div class="about-card-icon">🎯</div>
+      <div class="about-card-icon">A</div>
       <h3>Belajar Adaptif</h3>
       <p>Sistem otomatis menyesuaikan tingkat kesulitan soal berdasarkan kemampuan dan kecepatan belajar setiap siswa secara real-time.</p>
     </div>
     <div class="about-card yellow">
-      <div class="about-card-icon">🏆</div>
+      <div class="about-card-icon">P</div>
       <h3>Poin & Hadiah</h3>
       <p>Setiap jawaban benar dan aktivitas belajar menghasilkan poin yang bisa ditukarkan dengan hadiah menarik di kantin sekolah!</p>
     </div>
     <div class="about-card blue">
-      <div class="about-card-icon">👨‍👩‍👧</div>
+      <div class="about-card-icon">O</div>
       <h3>Pantauan Orang Tua</h3>
-      <p>Orang tua bisa memantau perkembangan belajar anak kapan saja — lihat grafik kemajuan, nilai, dan aktivitas belajar si kecil.</p>
+      <p>Orang tua bisa memantau perkembangan belajar anak kapan saja &mdash; lihat grafik kemajuan, nilai, dan aktivitas belajar si kecil.</p>
     </div>
     <div class="about-card orange">
-      <div class="about-card-icon">📊</div>
+      <div class="about-card-icon">L</div>
       <h3>Laporan Otomatis</h3>
       <p>Laporan mingguan otomatis dikirim ke orang tua dan guru lengkap dengan analisis kemajuan dan rekomendasi pembelajaran.</p>
     </div>
   </div>
 
   <div class="notice-box reveal" style="margin-top: 2.5rem;">
-    <span class="notice-icon">⚠️</span>
+    <span class="notice-icon">Info</span>
     <div class="notice-text">
-      <strong>Penting untuk Diketahui:</strong> SIPANDA adalah alat bantu belajar digital dan <strong>tidak memengaruhi nilai rapor</strong> secara langsung. Tujuan utama SIPANDA adalah membantu siswa belajar dengan cara yang menyenangkan di waktu senggang — saat libur, hari Minggu, atau sore hari setelah selesai bermain. SIPANDA bukan pengganti guru di kelas!
+      <strong>Penting untuk Diketahui:</strong> SIPANDA adalah alat bantu belajar digital dan <strong>tidak memengaruhi nilai rapor</strong> secara langsung. Tujuan utama SIPANDA adalah membantu siswa belajar dengan cara yang menyenangkan di waktu senggang &mdash; saat libur, hari Minggu, atau sore hari setelah selesai bermain. SIPANDA bukan pengganti guru di kelas!
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section class="features-section" id="fitur">
-  <span class="section-emoji">✨</span>
   <h2 class="section-title">Fitur Unggulan SIPANDA</h2>
   <p class="section-sub">Belajar jadi lebih seru dengan berbagai fitur canggih yang dirancang khusus untuk siswa SD!</p>
   <div class="features-grid reveal">
     <div class="feature-card f1">
-      <span class="feature-icon">🧠</span>
+      <span class="feature-icon">AI</span>
       <h4>Soal Adaptif Pintar</h4>
       <p>Soal otomatis naik atau turun level sesuai kemampuanmu. Tidak terlalu mudah, tidak terlalu susah!</p>
     </div>
     <div class="feature-card f2">
-      <span class="feature-icon">🔥</span>
+      <span class="feature-icon">S</span>
       <h4>Streak Belajar</h4>
       <p>Pertahankan streak belajar harianmu! Semakin panjang streak, semakin banyak bonus poin!</p>
     </div>
     <div class="feature-card f3">
-      <span class="feature-icon">📹</span>
+      <span class="feature-icon">V</span>
       <h4>Materi Video</h4>
       <p>Tonton video pembelajaran seru yang mudah dipahami. Belajar sambil nonton bukan nonton YouTube!</p>
     </div>
     <div class="feature-card f4">
-      <span class="feature-icon">💬</span>
+      <span class="feature-icon">F</span>
       <h4>Forum & Chat</h4>
       <p>Tanya guru atau diskusi dengan teman soal pelajaran melalui forum belajar yang aman.</p>
     </div>
     <div class="feature-card f5">
-      <span class="feature-icon">📈</span>
+      <span class="feature-icon">P</span>
       <h4>Progress Tracker</h4>
       <p>Lihat sejauh mana kamu sudah menguasai setiap bab pelajaran dengan progress bar yang seru!</p>
     </div>
     <div class="feature-card f6">
-      <span class="feature-icon">🔔</span>
+      <span class="feature-icon">N</span>
       <h4>Notifikasi Pintar</h4>
       <p>Pengingat belajar dan notifikasi penting yang dikirim ke siswa, orang tua, dan guru.</p>
     </div>
@@ -139,23 +136,23 @@
 <section class="rewards-section">
   <div class="rewards-inner">
     <div class="rewards-text reveal">
-      <h2>🎁 Kumpulkan Poin, Tukar Hadiah!</h2>
+      <h2>Kumpulkan Poin, Tukar Hadiah!</h2>
       <p>
-        Di SIPANDA, setiap aktivitas belajar menghasilkan poin! Selesaikan kuis, pertahankan streak harian, raih nilai tinggi — semuanya berhadiah poin yang bisa ditukar langsung di kantin sekolah.
+        Di SIPANDA, setiap aktivitas belajar menghasilkan poin! Selesaikan kuis, pertahankan streak harian, raih nilai tinggi &mdash; semuanya berhadiah poin yang bisa ditukar langsung di kantin sekolah.
       </p>
       <p>
-        Seperti bermain di Timezone, tapi hadiahnya bisa dimakan atau diminum! 🍭 Anak semangat belajar, orang tua senang screen time anak lebih berkualitas.
+        Anak semangat belajar, orang tua senang screen time anak lebih berkualitas.
       </p>
       <div class="point-badges">
-        <span class="point-badge">⭐ Jawaban Benar = +10 poin</span>
-        <span class="point-badge">🔥 Streak 7 Hari = +100 poin</span>
-        <span class="point-badge">🏆 Skor Sempurna = +50 poin</span>
-        <span class="point-badge">📖 Selesai Bab = +75 poin</span>
+        <span class="point-badge">Jawaban Benar = +10 poin</span>
+        <span class="point-badge">Streak 7 Hari = +100 poin</span>
+        <span class="point-badge">Skor Sempurna = +50 poin</span>
+        <span class="point-badge">Selesai Bab = +75 poin</span>
       </div>
     </div>
     <div class="rewards-visual reveal">
       <div class="reward-item">
-        <span class="reward-item-icon">🍪</span>
+        <span class="reward-item-icon">Sn</span>
         <div class="reward-item-info">
           <strong>Snack Kantin</strong>
           <span>Cemilan favorit</span>
@@ -163,7 +160,7 @@
         <span class="reward-pts">200 pts</span>
       </div>
       <div class="reward-item">
-        <span class="reward-item-icon">🥤</span>
+        <span class="reward-item-icon">Mn</span>
         <div class="reward-item-info">
           <strong>Minuman Segar</strong>
           <span>Jus atau susu</span>
@@ -171,7 +168,7 @@
         <span class="reward-pts">350 pts</span>
       </div>
       <div class="reward-item">
-        <span class="reward-item-icon">🍱</span>
+        <span class="reward-item-icon">Ms</span>
         <div class="reward-item-info">
           <strong>Makan Siang</strong>
           <span>Menu spesial kantin</span>
@@ -179,7 +176,7 @@
         <span class="reward-pts">500 pts</span>
       </div>
       <div class="reward-item">
-        <span class="reward-item-icon">📓</span>
+        <span class="reward-item-icon">AT</span>
         <div class="reward-item-info">
           <strong>Alat Tulis</strong>
           <span>Buku & pensil keren</span>
@@ -192,12 +189,11 @@
 
 <!-- ROLES -->
 <section class="roles-section" id="peran">
-  <span class="section-emoji">👥</span>
   <h2 class="section-title">Siapa Saja Penggunanya?</h2>
-  <p class="section-sub">SIPANDA melayani seluruh ekosistem sekolah — login sesuai akun masing-masing dan langsung diarahkan ke dashboard yang tepat!</p>
+  <p class="section-sub">SIPANDA melayani seluruh ekosistem sekolah &mdash; login sesuai akun masing-masing dan langsung diarahkan ke dashboard yang tepat!</p>
   <div class="roles-grid reveal">
     <div class="role-card siswa">
-      <div class="role-avatar">👧</div>
+      <div class="role-avatar">S</div>
       <h3>Siswa</h3>
       <p>Portal belajar seru dengan gamifikasi, soal adaptif, dan sistem poin hadiah!</p>
       <ul class="role-features">
@@ -209,7 +205,7 @@
       </ul>
     </div>
     <div class="role-card ortu">
-      <div class="role-avatar">👩</div>
+      <div class="role-avatar">O</div>
       <h3>Orang Tua</h3>
       <p>Pantau kemajuan belajar anak kapan saja dan di mana saja dengan mudah!</p>
       <ul class="role-features">
@@ -221,7 +217,7 @@
       </ul>
     </div>
     <div class="role-card guru">
-      <div class="role-avatar">👨‍🏫</div>
+      <div class="role-avatar">G</div>
       <h3>Guru / Wali Kelas</h3>
       <p>Kelola materi, pantau siswa, dan buat soal adaptif dengan mudah!</p>
       <ul class="role-features">
@@ -233,9 +229,9 @@
       </ul>
     </div>
     <div class="role-card kepala">
-      <div class="role-avatar">👨‍💼</div>
+      <div class="role-avatar">K</div>
       <h3>Kepala Sekolah</h3>
-      <p>Pantau performa seluruh sekolah dan kelola manajemen guru &amp; siswa!</p>
+      <p>Pantau performa seluruh sekolah dan kelola manajemen guru & siswa!</p>
       <ul class="role-features">
         <li>Overview sekolah</li>
         <li>Manajemen guru</li>
@@ -249,12 +245,11 @@
 
 <!-- SCOPE -->
 <section class="scope-section">
-  <span class="section-emoji">📋</span>
   <h2 class="section-title">Apa yang Bisa & Tidak Bisa SIPANDA Lakukan?</h2>
   <p class="section-sub">Transparansi adalah penting. Berikut ruang lingkup sistem SIPANDA dengan jelas!</p>
   <div class="scope-cols reveal">
     <div class="scope-col scope-in">
-      <h3>✅ Dalam Cakupan</h3>
+      <h3>Dalam Cakupan</h3>
       <ul class="scope-list">
         <li>Manajemen akun dengan hak akses berbeda untuk setiap peran</li>
         <li>Konten pembelajaran: teks, video embed, soal adaptif</li>
@@ -268,7 +263,7 @@
       </ul>
     </div>
     <div class="scope-col scope-out">
-      <h3>❌ Di Luar Cakupan</h3>
+      <h3>Di Luar Cakupan</h3>
       <ul class="scope-list">
         <li>Tidak menggantikan kehadiran fisik guru di kelas</li>
         <li>Tidak terintegrasi dengan Dapodik atau Rapor Digital</li>
@@ -284,13 +279,12 @@
 
 <!-- HOW IT WORKS -->
 <section class="how-section" id="cara-kerja">
-  <span class="section-emoji">🔄</span>
   <h2 class="section-title">Bagaimana Cara Kerjanya?</h2>
   <p class="section-sub">Mulai belajar dengan SIPANDA sangat mudah! Ikuti langkah-langkah berikut ini:</p>
   <div class="steps">
     <div class="step reveal">
       <div class="step-num">1</div>
-      <span class="step-icon">📧</span>
+      <span class="step-icon">Akun</span>
       <div class="step-text">
         <h4>Dapatkan Akun dari Sekolah</h4>
         <p>Sekolah memberikan email dan password akun SIPANDA. Siswa, orang tua, guru, dan kepala sekolah masing-masing mendapat akun sesuai perannya.</p>
@@ -298,15 +292,15 @@
     </div>
     <div class="step reveal">
       <div class="step-num">2</div>
-      <span class="step-icon">🔑</span>
+      <span class="step-icon">Login</span>
       <div class="step-text">
         <h4>Login ke SIPANDA</h4>
-        <p>Masuk menggunakan email yang diberikan. Sistem otomatis mengarahkanmu ke dashboard sesuai peran — siswa ke portal belajar, orang tua ke panel monitoring, dll.</p>
+        <p>Masuk menggunakan email yang diberikan. Sistem otomatis mengarahkanmu ke dashboard sesuai peran &mdash; siswa ke portal belajar, orang tua ke panel monitoring, dll.</p>
       </div>
     </div>
     <div class="step reveal">
       <div class="step-num">3</div>
-      <span class="step-icon">📚</span>
+      <span class="step-icon">Materi</span>
       <div class="step-text">
         <h4>Pelajari Materi & Kerjakan Soal</h4>
         <p>Siswa membaca materi, menonton video, lalu mengerjakan kuis. Sistem secara otomatis menyesuaikan tingkat kesulitan soal berdasarkan jawaban yang diberikan.</p>
@@ -314,7 +308,7 @@
     </div>
     <div class="step reveal">
       <div class="step-num">4</div>
-      <span class="step-icon">⭐</span>
+      <span class="step-icon">Poin</span>
       <div class="step-text">
         <h4>Kumpulkan Poin dari Aktivitas Belajar</h4>
         <p>Setiap jawaban benar, streak harian, dan penyelesaian bab menghasilkan poin. Semakin rajin belajar, semakin banyak poin yang terkumpul!</p>
@@ -322,7 +316,7 @@
     </div>
     <div class="step reveal">
       <div class="step-num">5</div>
-      <span class="step-icon">🎁</span>
+      <span class="step-icon">Hadiah</span>
       <div class="step-text">
         <h4>Tukar Poin dengan Hadiah!</h4>
         <p>Bawa poin ke kantin sekolah dan tukar dengan jajan atau hadiah favoritmu. Orang tua bisa memantau semua progres ini di dashboard mereka!</p>
@@ -333,10 +327,10 @@
 
 <!-- CTA -->
 <section class="cta-section" id="masuk">
-  <h2>Siap Mulai Belajar Bersama SIPANDA? 🚀</h2>
+  <h2>Siap Mulai Belajar Bersama SIPANDA?</h2>
   <p>Bergabung dengan ribuan siswa yang sudah belajar lebih seru, lebih pintar, dan lebih bersemangat setiap harinya!</p>
   <div class="cta-btns">
-    <a href="#" class="btn-white">🐼 Masuk Sekarang</a>
+    <button class="btn-white" onclick="openModal('login')">Masuk Sekarang</button>
     <a href="#tentang" class="btn-outline-white">Pelajari Lebih Lanjut</a>
   </div>
   <p style="margin-top: 1.5rem; font-size: 0.82rem; opacity: 0.6;">Akun SIPANDA diberikan oleh pihak sekolah. Hubungi sekolahmu untuk info lebih lanjut.</p>
@@ -346,7 +340,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo">🐼 SIPANDA</div>
+      <div class="footer-logo">SIPANDA</div>
       <p>Sistem Informasi Pembelajaran Adaptif berbasis aNalitik DAta siswa. Platform belajar seru untuk ekosistem Sekolah Dasar.</p>
     </div>
     <div class="footer-links">
@@ -379,9 +373,89 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 SIPANDA – Sistem Informasi Pembelajaran Adaptif. Dibuat dengan ❤️ untuk kemajuan pendidikan SD Indonesia.</p>
+    <p>&copy; 2025 SIPANDA &ndash; Sistem Informasi Pembelajaran Adaptif. Dibuat untuk kemajuan pendidikan SD Indonesia.</p>
   </div>
 </footer>
+
+<!-- MODAL LOGIN / REGISTER / FORGOT -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+
+    <!-- LOGIN FORM -->
+    <div id="formLogin">
+      <h2>Masuk</h2>
+      <p class="modal-sub">Masuk menggunakan akun yang diberikan oleh sekolah.</p>
+      <div class="form-group">
+        <label for="loginEmail">Email atau Username</label>
+        <input type="text" id="loginEmail" placeholder="contoh@email.com">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Masukkan password">
+      </div>
+      <span class="forgot-link" onclick="showForgot()">Lupa password atau username?</span>
+      <button class="btn-modal" onclick="handleLogin()">Masuk</button>
+      <p class="modal-footer-text">
+        Belum punya akun? <a onclick="showRegister()">Daftar di sini</a>
+      </p>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="formRegister" class="modal-form-hidden">
+      <h2>Daftar Akun</h2>
+      <p class="modal-sub">Daftar untuk mulai belajar bersama SIPANDA.</p>
+      <div class="form-group">
+        <label for="regName">Nama Lengkap</label>
+        <input type="text" id="regName" placeholder="Nama lengkap">
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="contoh@email.com">
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" placeholder="Buat password">
+      </div>
+      <div class="form-group">
+        <label for="regConfirm">Konfirmasi Password</label>
+        <input type="password" id="regConfirm" placeholder="Ulangi password">
+      </div>
+      <div class="form-group">
+        <label for="regRole">Daftar Sebagai</label>
+        <select id="regRole">
+          <option value="Siswa">Siswa</option>
+          <option value="Orang Tua">Orang Tua</option>
+          <option value="Guru">Guru</option>
+          <option value="Kepala Sekolah">Kepala Sekolah</option>
+        </select>
+      </div>
+      <button class="btn-modal" onclick="handleRegister()">Daftar</button>
+      <p class="modal-footer-text">
+        Sudah punya akun? <a onclick="showLogin()">Masuk di sini</a>
+      </p>
+    </div>
+
+    <!-- FORGOT PASSWORD FORM -->
+    <div id="formForgot" class="modal-form-hidden">
+      <h2>Lupa Password</h2>
+      <p class="modal-sub">Masukkan email atau username untuk mereset password.</p>
+      <div class="alert-info">
+        <strong>Perhatian:</strong> Fitur reset password terintegrasi dengan sistem sekolah. Silakan hubungi admin sekolah atau guru wali kelas untuk mendapatkan password baru.
+      </div>
+      <div class="form-group">
+        <label for="forgotEmail">Email atau Username</label>
+        <input type="text" id="forgotEmail" placeholder="contoh@email.com">
+      </div>
+      <button class="btn-modal" onclick="handleForgot()">Kirim Permintaan</button>
+      <p class="modal-footer-text">
+        Kembali ke <a onclick="showLogin()">halaman masuk</a>
+      </p>
+    </div>
+
+  </div>
+</div>
 
 <script>
   // Scroll reveal
@@ -396,10 +470,10 @@
 
   // Animated speech bubble cycling
   const msgs = [
-    'Halo! Aku <strong>Panda</strong> 🐼<br>Yuk belajar bareng biar makin pintar!<br>Nanti dapat poin dan hadiah lo! 🎁',
-    'Belajar itu <strong>seru</strong> lho! 🎉<br>Kerjakan soal, kumpulkan poin,<br>dan tukar dengan jajan! 🍪',
-    'Orang tua bisa <strong>pantau</strong> 👀<br>perkembangan belajarmu<br>kapan saja! 📱',
-    'Soal akan <strong>menyesuaikan</strong> 🧠<br>kemampuanmu otomatis!<br>Tidak susah, tidak gampang! ✨'
+    'Halo! Aku <strong>Panda</strong><br>Yuk belajar bareng biar makin pintar!<br>Nanti dapat poin dan hadiah lo!',
+    'Belajar itu <strong>seru</strong> lho!<br>Kerjakan soal, kumpulkan poin,<br>dan tukar dengan jajan!',
+    'Orang tua bisa <strong>pantau</strong><br>perkembangan belajarmu<br>kapan saja!',
+    'Soal akan <strong>menyesuaikan</strong><br>kemampuanmu otomatis!<br>Tidak susah, tidak gampang!'
   ];
   let mi = 0;
   const bubble = document.querySelector('.speech-bubble');
@@ -422,6 +496,84 @@
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+  });
+
+  // MODAL
+  const overlay = document.getElementById('modalOverlay');
+  const formLogin = document.getElementById('formLogin');
+  const formRegister = document.getElementById('formRegister');
+  const formForgot = document.getElementById('formForgot');
+
+  function openModal(form) {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    formLogin.classList.add('modal-form-hidden');
+    formRegister.classList.add('modal-form-hidden');
+    formForgot.classList.add('modal-form-hidden');
+    if (form === 'login') formLogin.classList.remove('modal-form-hidden');
+    else if (form === 'register') formRegister.classList.remove('modal-form-hidden');
+    else if (form === 'forgot') formForgot.classList.remove('modal-form-hidden');
+  }
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === overlay) closeModal();
+  }
+
+  function showLogin() { openModal('login'); }
+  function showRegister() { openModal('register'); }
+  function showForgot() { openModal('forgot'); }
+
+  function handleLogin() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pass = document.getElementById('loginPassword').value.trim();
+    if (!email || !pass) {
+      alert('Silakan isi email dan password.');
+      return;
+    }
+    alert('Login berhasil! (simulasi)');
+    closeModal();
+  }
+
+  function handleRegister() {
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const pass = document.getElementById('regPassword').value;
+    const confirm = document.getElementById('regConfirm').value;
+    const role = document.getElementById('regRole').value;
+    if (!name || !email || !pass || !confirm) {
+      alert('Silakan isi semua field.');
+      return;
+    }
+    if (pass !== confirm) {
+      alert('Password dan konfirmasi password tidak cocok.');
+      return;
+    }
+    if (pass.length < 6) {
+      alert('Password minimal 6 karakter.');
+      return;
+    }
+    alert('Pendaftaran berhasil! Silakan login. (simulasi)');
+    closeModal();
+  }
+
+  function handleForgot() {
+    const email = document.getElementById('forgotEmail').value.trim();
+    if (!email) {
+      alert('Silakan masukkan email atau username.');
+      return;
+    }
+    alert('Permintaan reset password telah dikirim ke admin sekolah. (simulasi)');
+    showLogin();
+  }
+
+  // Close modal on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
   });
 </script>
 </body>
