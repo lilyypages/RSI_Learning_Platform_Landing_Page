@@ -1,0 +1,18 @@
+services:
+  backend:
+    container_name: sipanda-api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    env_file: ./backend/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - sipanda-net
+    volumes:
+      - ./backend/src:/app/src
+
+networks:
+  sipanda-net:
+    driver: bridge
