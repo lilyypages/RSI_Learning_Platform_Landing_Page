@@ -37,15 +37,9 @@ function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
     api
-      .get<{ user: { userId: string; email: string; role: string } }>("/me")
+      .get<{ user: User }>("/me")
       .then((res) => {
-        setUser({
-          id: res.data.user.userId,
-          email: res.data.user.email,
-          name: "",
-          role: res.data.user.role as User["role"],
-          imageUrl: null,
-        });
+        setUser(res.data.user);
       })
       .catch(() => {
         localStorage.removeItem("accessToken");

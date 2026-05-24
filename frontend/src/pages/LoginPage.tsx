@@ -25,7 +25,10 @@ function LoginPage() {
       await login(email, password);
       navigate("/dashboard");
     } catch (err: unknown) {
-      if (err instanceof Error) {
+      if (err && typeof err === "object" && "response" in err) {
+        const axiosErr = err as { response?: { data?: { message?: string } } };
+        setError(axiosErr.response?.data?.message || "Email atau password salah.");
+      } else if (err instanceof Error) {
         setError(err.message);
       } else {
         setError("Email atau password salah.");

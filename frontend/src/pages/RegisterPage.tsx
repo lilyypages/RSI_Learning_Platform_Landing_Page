@@ -45,7 +45,10 @@ function RegisterPage() {
       await register(name, email, password, confirmPassword, role);
       navigate("/dashboard");
     } catch (err: unknown) {
-      if (err instanceof Error) {
+      if (err && typeof err === "object" && "response" in err) {
+        const axiosErr = err as { response?: { data?: { message?: string } } };
+        setError(axiosErr.response?.data?.message || "Pendaftaran gagal. Silakan coba lagi.");
+      } else if (err instanceof Error) {
         setError(err.message);
       } else {
         setError("Pendaftaran gagal. Silakan coba lagi.");

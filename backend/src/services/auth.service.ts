@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../config/prisma";
 import {
   signAccessToken,
   signRefreshToken,
@@ -13,8 +13,6 @@ import {
 } from "../config/redis";
 import { config } from "../config";
 import { SignUpBody, AuthResponse } from "../types";
-
-const prisma = new PrismaClient();
 
 async function register(body: SignUpBody): Promise<AuthResponse> {
   const { name, email, password, role } = body;

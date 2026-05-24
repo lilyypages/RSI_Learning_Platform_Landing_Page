@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import prisma from "../config/prisma";
 import { authService } from "../services/auth.service";
 import { AuthRequest } from "../types";
 import { z } from "zod";
@@ -74,8 +75,20 @@ async function logout(req: AuthRequest, res: Response, next: NextFunction) {
   }
 }
 
-async function me(req: AuthRequest, res: Response) {
-  res.json({ user: req.user });
+async function me(req: AuthRequest, res: Response, next: NextFunction) {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user!.userId },
+      select: { id: true, email: true, name: true, role: true, imageUrl: true, isActive: true },
+    });
+    if (!user || !user.isActive) {
+      res.status(401).json({ message: "User tidak ditemukan." });
+      return;
+    }
+    res.json({ user });
+  } catch (err) {
+    next(err);
+  }
 }
 
 export const authController = { register, login, refresh, logout, me };
