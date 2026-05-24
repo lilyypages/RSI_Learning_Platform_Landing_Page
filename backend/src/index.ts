@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { config } from "./config";
 import authRoutes from "./routes/auth.routes";
+import quizRoutes from "./routes/quiz.routes";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
@@ -14,6 +15,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/quiz", quizRoutes);
 
 app.use(errorHandler);
 

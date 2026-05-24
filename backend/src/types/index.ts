@@ -27,6 +27,12 @@ export interface RefreshBody {
   refreshToken: string;
 }
 
+export interface ChangePasswordBody {
+  currentPassword: string;
+  newPassword: string;
+  confirmNewPassword: string;
+}
+
 export interface AuthResponse {
   accessToken: string;
   refreshToken: string;
@@ -36,5 +42,18 @@ export interface AuthResponse {
     name: string;
     role: string;
     imageUrl: string | null;
+    forcePasswordChange?: boolean;
   };
+}
+
+export interface StartQuizBody {
+  materialId: string;
+  classSubjectId: string;
+}
+
+export interface AnswerQuizBody {
+  sessionId: string;
+  questionId: string;
+  answer: string;
+  timeTakenSec?: number;
 }

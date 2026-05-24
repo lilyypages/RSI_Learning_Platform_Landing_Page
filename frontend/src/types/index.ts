@@ -4,6 +4,8 @@ export interface User {
   name: string;
   role: "STUDENT" | "TEACHER" | "PARENT" | "PRINCIPAL";
   imageUrl: string | null;
+  isActive?: boolean;
+  forcePasswordChange?: boolean;
 }
 
 export interface AuthResponse {

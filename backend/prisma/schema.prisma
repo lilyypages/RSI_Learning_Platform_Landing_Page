@@ -8,15 +8,17 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(uuid()) @db.Uuid
-  email        String   @unique @db.VarChar(255)
-  passwordHash String   @map("password_hash") @db.VarChar(255)
-  role         String   @db.VarChar(20)
-  name         String   @db.VarChar(255)
-  imageUrl     String?  @map("image_url") @db.VarChar(255)
-  isActive     Boolean  @default(true) @map("is_active")
-  createdBy    String?  @map("created_by") @db.Uuid
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
+  id                String   @id @default(uuid()) @db.Uuid
+  email             String   @unique @db.VarChar(255)
+  passwordHash      String   @map("password_hash") @db.VarChar(255)
+  role              String   @db.VarChar(20)
+  name              String   @db.VarChar(255)
+  username          String?  @unique @db.VarChar(100)
+  imageUrl          String?  @map("image_url") @db.VarChar(255)
+  isActive          Boolean  @default(true) @map("is_active")
+  forcePasswordChange Boolean @default(false) @map("force_password_change")
+  createdBy         String?  @map("created_by") @db.Uuid
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz
 
   creator   User?  @relation("UserCreator", fields: [createdBy], references: [id], onDelete: SetNull)
   createdUsers User[] @relation("UserCreator")
@@ -28,8 +30,34 @@ model User {
   sentMessages     Message[]  @relation("SentMessage")
   receivedMessages Message[]  @relation("ReceivedMessage")
   notifications    Notification[]
+  auditLogs        AuditLog[]
+  passwordHistory  PasswordHistory[]
 
   @@map("users")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String?  @map("user_id") @db.Uuid
+  action    String   @db.VarChar(50)
+  detail    String?  @db.Text
+  ipAddress String?  @map("ip_address") @db.VarChar(45)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("audit_logs")
+}
+
+model PasswordHistory {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_history")
 }
 
 model Student {
@@ -184,13 +212,13 @@ model Question {
 }
 
 model StudentProgress {
-  id               String   @id @default(uuid()) @db.Uuid
-  studentId        String   @map("student_id") @db.Uuid
-  classSubjectId   String   @map("class_subject_id") @db.Uuid
-  completionPercent Float   @default(0.0) @map("completion_percent")
-  totalScore       Int      @default(0) @map("total_score")
-  adaptiveLevel    String   @default("STANDARD") @map("adaptive_level") @db.VarChar(20)
-  lastActivity     DateTime @default(now()) @map("last_activity") @db.Timestamptz
+  id                String   @id @default(uuid()) @db.Uuid
+  studentId         String   @map("student_id") @db.Uuid
+  classSubjectId    String   @map("class_subject_id") @db.Uuid
+  completionPercent Float    @default(0.0) @map("completion_percent")
+  totalScore        Int      @default(0) @map("total_score")
+  adaptiveLevel     String   @default("STANDARD") @map("adaptive_level") @db.VarChar(20)
+  lastActivity      DateTime @default(now()) @map("last_activity") @db.Timestamptz
 
   student      Student      @relation(fields: [studentId], references: [id], onDelete: Cascade)
   classSubject ClassSubject @relation(fields: [classSubjectId], references: [id])
@@ -209,6 +237,7 @@ model QuizSession {
   wrongCount     Int       @default(0) @map("wrong_count")
   livesUsed      Int       @default(0) @map("lives_used")
   streakCount    Int       @default(0) @map("streak_count")
+  currentLevel   String    @default("MEDIUM") @map("current_level") @db.VarChar(20)
   resultLevel    String?   @map("result_level") @db.VarChar(20)
   startedAt      DateTime  @default(now()) @map("started_at") @db.Timestamptz
   finishedAt     DateTime? @map("finished_at") @db.Timestamptz

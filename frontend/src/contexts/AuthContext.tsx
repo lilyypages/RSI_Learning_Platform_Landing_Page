@@ -22,6 +22,11 @@ interface AuthContextType {
     role: string
   ) => Promise<void>;
   logout: () => Promise<void>;
+  changePassword: (
+    currentPassword: string,
+    newPassword: string,
+    confirmNewPassword: string
+  ) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -90,6 +95,24 @@ function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   }, []);
 
+  const changePassword = useCallback(
+    async (
+      currentPassword: string,
+      newPassword: string,
+      confirmNewPassword: string
+    ) => {
+      await api.post("/change-password", {
+        currentPassword,
+        newPassword,
+        confirmNewPassword,
+      });
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      setUser(null);
+    },
+    []
+  );
+
   return (
     <AuthContext.Provider
       value={{
@@ -99,6 +122,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
         login,
         register,
         logout,
+        changePassword,
       }}
     >
       {children}
