@@ -1,4 +1,29 @@
 services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: sipanda-db
+    restart: always
+    environment:
+      POSTGRES_USER: sipanda
+      POSTGRES_PASSWORD: sipanda123
+      POSTGRES_DB: sipanda
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - sipanda-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: sipanda-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - sipanda-net
+
   backend:
     container_name: sipanda-api
     build:
@@ -8,11 +33,30 @@ services:
     env_file: ./backend/.env
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
     networks:
       - sipanda-net
     volumes:
       - ./backend/src:/app/src
 
+  frontend:
+    container_name: sipanda-web
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - sipanda-net
+
 networks:
   sipanda-net:
     driver: bridge
+
+volumes:
+  pgdata:
