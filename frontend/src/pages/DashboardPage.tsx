@@ -55,6 +55,42 @@ function DashboardPage() {
             </Link>
           )}
 
+          {user?.role === "TEACHER" && (
+            <Link
+              to="/teacher-panel"
+              className="block p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+            >
+              <h3 className="font-semibold text-gray-800 mb-2">Panel Guru</h3>
+              <p className="text-sm text-gray-500">
+                Monitoring siswa, kelola mapel, materi, dan soal.
+              </p>
+            </Link>
+          )}
+
+          {user?.role === "PARENT" && (
+            <Link
+              to="/parent-hub"
+              className="block p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+            >
+              <h3 className="font-semibold text-gray-800 mb-2">Pantau Anak</h3>
+              <p className="text-sm text-gray-500">
+                Lihat ringkasan kemampuan, grafik kemajuan, dan pesan dari guru.
+              </p>
+            </Link>
+          )}
+
+          {user?.role === "PRINCIPAL" && (
+            <Link
+              to="/register"
+              className="block p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+            >
+              <h3 className="font-semibold text-gray-800 mb-2">Buat Akun Baru</h3>
+              <p className="text-sm text-gray-500">
+                Daftarkan akun guru, orang tua, atau murid baru.
+              </p>
+            </Link>
+          )}
+
           <Link
             to="/change-password"
             className="block p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"

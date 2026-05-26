@@ -19,7 +19,8 @@ interface AuthContextType {
     email: string,
     password: string,
     confirmPassword: string,
-    role: string
+    role: string,
+    extra?: Record<string, unknown>
   ) => Promise<void>;
   logout: () => Promise<void>;
   changePassword: (
@@ -42,7 +43,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
     api
-      .get<{ user: User }>("/me")
+      .get<{ user: User }>("/auth/me")
       .then((res) => {
         setUser(res.data.user);
       })
@@ -54,7 +55,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = useCallback(async (email: string, password: string) => {
-    const res = await api.post<AuthResponse>("/login", { email, password });
+    const res = await api.post<AuthResponse>("/auth/login", { email, password });
     const data = res.data;
     localStorage.setItem("accessToken", data.accessToken);
     localStorage.setItem("refreshToken", data.refreshToken);
@@ -62,31 +63,15 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const register = useCallback(
-    async (
-      name: string,
-      email: string,
-      password: string,
-      confirmPassword: string,
-      role: string
-    ) => {
-      const res = await api.post<AuthResponse>("/register", {
-        name,
-        email,
-        password,
-        confirmPassword,
-        role,
-      });
-      const data = res.data;
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      setUser(data.user);
+    async (name: string, email: string, password: string, confirmPassword: string, role: string, extra?: Record<string, unknown>) => {
+      await api.post<AuthResponse>("/auth/register", { name, email, password, confirmPassword, role, ...extra });
     },
     []
   );
 
   const logout = useCallback(async () => {
     try {
-      await api.post("/logout");
+      await api.post("/auth/logout");
     } catch {
       // ignore
     }
@@ -96,16 +81,8 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const changePassword = useCallback(
-    async (
-      currentPassword: string,
-      newPassword: string,
-      confirmNewPassword: string
-    ) => {
-      await api.post("/change-password", {
-        currentPassword,
-        newPassword,
-        confirmNewPassword,
-      });
+    async (currentPassword: string, newPassword: string, confirmNewPassword: string) => {
+      await api.post("/auth/change-password", { currentPassword, newPassword, confirmNewPassword });
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
       setUser(null);

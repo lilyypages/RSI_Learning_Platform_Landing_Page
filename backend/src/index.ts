@@ -3,6 +3,10 @@ import cors from "cors";
 import { config } from "./config";
 import authRoutes from "./routes/auth.routes";
 import quizRoutes from "./routes/quiz.routes";
+import teacherRoutes from "./routes/teacher.routes";
+import parentRoutes from "./routes/parent.routes";
+import { authenticate } from "./middleware/auth";
+import { authorize } from "./middleware/rbac";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
@@ -15,7 +19,9 @@ app.get("/health", (_req, res) => {
 });
 
 app.use("/auth", authRoutes);
-app.use("/quiz", quizRoutes);
+app.use("/quiz", authenticate, authorize("STUDENT"), quizRoutes);
+app.use("/teacher", authenticate, authorize("TEACHER", "PRINCIPAL"), teacherRoutes);
+app.use("/parent", authenticate, authorize("PARENT", "PRINCIPAL"), parentRoutes);
 
 app.use(errorHandler);
 

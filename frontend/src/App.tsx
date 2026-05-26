@@ -5,6 +5,9 @@ import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import ChangePasswordPage from "./pages/ChangePasswordPage";
 import QuizPage from "./pages/QuizPage";
+import TeacherPanelPage from "./pages/TeacherPanelPage";
+import ParentHubPage from "./pages/ParentHubPage";
+import ParentChildDetailPage from "./pages/ParentChildDetailPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -13,7 +16,14 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/register"
+            element={
+              <ProtectedRoute allowedRoles={["PRINCIPAL"]}>
+                <RegisterPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/change-password" element={
             <ProtectedRoute>
               <ChangePasswordPage />
@@ -32,6 +42,30 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={["STUDENT"]}>
                 <QuizPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/teacher-panel"
+            element={
+              <ProtectedRoute allowedRoles={["TEACHER"]}>
+                <TeacherPanelPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/parent-hub"
+            element={
+              <ProtectedRoute allowedRoles={["PARENT"]}>
+                <ParentHubPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/parent-hub/child/:id"
+            element={
+              <ProtectedRoute allowedRoles={["PARENT"]}>
+                <ParentChildDetailPage />
               </ProtectedRoute>
             }
           />

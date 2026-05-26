@@ -16,6 +16,12 @@ export interface SignUpBody {
   password: string;
   confirmPassword: string;
   role: "STUDENT" | "TEACHER" | "PARENT" | "PRINCIPAL";
+  nis?: string;
+  classId?: string;
+  parentId?: string;
+  nip?: string;
+  phone?: string;
+  address?: string;
 }
 
 export interface SignInBody {

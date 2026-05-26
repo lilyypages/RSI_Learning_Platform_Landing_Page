@@ -40,8 +40,8 @@ async function logAudit(userId: string | null, action: string, detail: string | 
   });
 }
 
-async function register(body: SignUpBody, ipAddress?: string): Promise<AuthResponse> {
-  const { name, email, password, role } = body;
+async function register(body: SignUpBody, createdBy: string, ipAddress?: string): Promise<AuthResponse> {
+  const { name, email, password, role, nis, classId, parentId, nip, phone, address } = body;
 
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
@@ -61,6 +61,7 @@ async function register(body: SignUpBody, ipAddress?: string): Promise<AuthRespo
       username,
       forcePasswordChange: true,
       isActive: true,
+      createdBy,
     },
   });
 
@@ -68,25 +69,41 @@ async function register(body: SignUpBody, ipAddress?: string): Promise<AuthRespo
     data: { userId: user.id, passwordHash },
   });
 
-  await logAudit(user.id, "REGISTER", `User registered as ${role}`, ipAddress);
+  if (role === "STUDENT") {
+    if (!nis) throw new Error("NIS wajib untuk siswa.");
+    await prisma.student.create({
+      data: {
+        userId: user.id,
+        nis,
+        classId: classId || null,
+        parentId: parentId || null,
+      },
+    });
+  } else if (role === "TEACHER") {
+    await prisma.teacher.create({
+      data: {
+        userId: user.id,
+        nip: nip || null,
+        phone: phone || null,
+      },
+    });
+  } else if (role === "PARENT") {
+    await prisma.parent.create({
+      data: {
+        userId: user.id,
+        phone: phone || null,
+        address: address || null,
+      },
+    });
+  }
 
-  // Email notification placeholder
+  await logAudit(user.id, "REGISTER", `User registered as ${role} by ${createdBy}`, ipAddress);
+
   console.log(`[EMAIL] Welcome email sent to ${email}`);
 
-  const payload: TokenPayload = {
-    userId: user.id,
-    email: user.email,
-    role: user.role,
-  };
-
-  const accessToken = signAccessToken(payload);
-  const refreshToken = signRefreshToken(payload);
-
-  await setRefreshToken(user.id, refreshToken);
-
   return {
-    accessToken,
-    refreshToken,
+    accessToken: "",
+    refreshToken: "",
     user: {
       id: user.id,
       email: user.email,

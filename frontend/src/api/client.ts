@@ -2,7 +2,7 @@ import axios from "axios";
 import type { AuthResponse } from "../types";
 
 const api = axios.create({
-  baseURL: "/auth",
+  baseURL: "",
   headers: { "Content-Type": "application/json" },
 });
 

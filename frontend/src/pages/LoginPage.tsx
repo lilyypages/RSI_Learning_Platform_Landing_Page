@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 function LoginPage() {
@@ -90,10 +90,7 @@ function LoginPage() {
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-6">
-          Belum punya akun?{" "}
-          <Link to="/register" className="text-blue-600 hover:underline">
-            Daftar
-          </Link>
+          &copy; SIPANDA Learning Platform
         </p>
       </div>
     </div>

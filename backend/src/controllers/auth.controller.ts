@@ -10,6 +10,12 @@ const signUpSchema = z.object({
   password: z.string().min(6, "Password minimal 6 karakter."),
   confirmPassword: z.string(),
   role: z.enum(["STUDENT", "TEACHER", "PARENT", "PRINCIPAL"]),
+  nis: z.string().optional(),
+  classId: z.string().optional(),
+  parentId: z.string().optional(),
+  nip: z.string().optional(),
+  phone: z.string().optional(),
+  address: z.string().optional(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Password dan konfirmasi password tidak cocok.",
   path: ["confirmPassword"],
@@ -39,10 +45,10 @@ function getClientIp(req: Request): string | undefined {
   return req.ip;
 }
 
-async function register(req: Request, res: Response, next: NextFunction) {
+async function register(req: AuthRequest, res: Response, next: NextFunction) {
   try {
     const parsed = signUpSchema.parse(req.body);
-    const result = await authService.register(parsed, getClientIp(req));
+    const result = await authService.register(parsed, req.user!.userId, getClientIp(req));
     res.status(201).json(result);
   } catch (err) {
     if (err instanceof z.ZodError) {
